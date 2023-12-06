@@ -56,7 +56,7 @@ exports.forgotPassword=AsyncErrorHandler(async(req,res,next)=>{
         return next(new ErrorHandler(404,"Email is not registered go for signup first"))
     }
     const Expirestoken=jwt.sign({email:finduser.email},"resetPass",{expiresIn:'5m'});
-    const resetTokenUrl=`http:localhost:3000/reset/password/${Expirestoken}`;
+    const resetTokenUrl=`https://my-e-commerce-frontend-o1fsmoezk-yunuslala.vercel.app/reset/password/${Expirestoken}`;
 
     const message=`Your password reset token is It is only valid for 5 minute: <br/><br/><a href="${resetTokenUrl}">${resetTokenUrl}</a><br/><br/>If you have not requested this email, please ignore it.`;
     try {
