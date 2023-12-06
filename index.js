@@ -19,9 +19,7 @@ process.on("uncaughtException",(err)=>{
 // app.use(express.static('public'));
 app.use(express.json());
 app.use(cors());
-app.use('/',(req,res)=>{
-res.send("server is deployed")
-})
+
 app.use('/api/v1',UserRouter);
 app.use('/api/v1',CategoryRouter);
 app.use('/api/v1',productRouter);
